@@ -1,39 +1,19 @@
-﻿class Program
+﻿using System.ComponentModel;
+
+class Program
 {
     static void Main()
     {
-        string nome = "Fernando";
-        Console.WriteLine(nome.Length);
-        //retorna um booleano se terminar com "e" true ou ! false
-        Console.WriteLine(nome.EndsWith("e"));
-        //inicia com "F" se sim true, 
-        Console.WriteLine(nome.StartsWith("F"));
-        Console.WriteLine(nome.Contains("Fernando"));
-        //verifica o index de "er" e retorna a posição 1 neste caso como o nome é "Fernando"
-        Console.WriteLine(nome.IndexOf("er"));
-        //verifica se a string é vazia
-        Console.WriteLine(string.IsNullOrEmpty(nome));
-        //verifica o dado que esta atribuido a string
-        Console.WriteLine(string.IsInterned(nome));
-        //verifica se ha espaço vazio na string
-        Console.WriteLine(string.IsNullOrWhiteSpace(nome));
+       int i =10;
+       long x = 520;
 
-        string[] cachorros = { "San", "trix" };
-        //faz um join 
-        Console.WriteLine(string.Join(" ", cachorros));
-        //se retorna a posicao correta vai printar a posicao
-        Console.WriteLine("San".CompareTo(cachorros[1]));
+      //neste caso se eu quiser igualar   i = x; terei um erro, devido  o int ser menor que um long, mesmo que eu pass I =10 e X=10
 
-        //parse de int para string
-        int i = 10;
-        int.TryParse("20", out i);
-        Console.WriteLine(i);
+    //para que a conversão seja executada terei que fazer a conversao implicita  i = (int)x;
 
-        //ou 
-
-        int.TryParse("20", out int x);
-        Console.WriteLine(x);
-
+        i = (int)x;
+       
+       Console.WriteLine(i);
     }
 
 }
