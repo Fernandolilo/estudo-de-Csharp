@@ -2,53 +2,38 @@
 {
     static void Main()
     {
+        string nome = "Fernando";
+        Console.WriteLine(nome.Length);
+        //retorna um booleano se terminar com "e" true ou ! false
+        Console.WriteLine(nome.EndsWith("e"));
+        //inicia com "F" se sim true, 
+        Console.WriteLine(nome.StartsWith("F"));
+        Console.WriteLine(nome.Contains("Fernando"));
+        //verifica o index de "er" e retorna a posição 1 neste caso como o nome é "Fernando"
+        Console.WriteLine(nome.IndexOf("er"));
+        //verifica se a string é vazia
+        Console.WriteLine(string.IsNullOrEmpty(nome));
+        //verifica o dado que esta atribuido a string
+        Console.WriteLine(string.IsInterned(nome));
+        //verifica se ha espaço vazio na string
+        Console.WriteLine(string.IsNullOrWhiteSpace(nome));
 
-        Console.WriteLine("Hello, World!");
+        string[] cachorros = { "San", "trix" };
+        //faz um join 
+        Console.WriteLine(string.Join(" ", cachorros));
+        //se retorna a posicao correta vai printar a posicao
+        Console.WriteLine("San".CompareTo(cachorros[1]));
 
-        //um ex usando o console para escrita.
-        Console.Write("Digite seu nome: ");
+        //parse de int para string
+        int i = 10;
+        int.TryParse("20", out i);
+        Console.WriteLine(i);
 
-        string name = Console.ReadLine();
-        Console.WriteLine(name);
-        Console.WriteLine($"Olá {name}");
-        Console.Write("Digite o ano de nascimento: ");
-        int year = int.Parse(Console.ReadLine());
-        int age = 2025 - year;
-        Console.WriteLine($"idade: {age}");
+        //ou 
 
-        if (age >= 18) Console.WriteLine("Você é maior de idade: ");
-        else if (age == 38) Console.WriteLine($"Você tem {age}");
-        else Console.WriteLine("voce é menor de idade");
+        int.TryParse("20", out int x);
+        Console.WriteLine(x);
 
-
-        string[] nome = { "Fernando", "Tania", "Elias", "Heloisa", "Davi" };
-        //quebra de linha
-        Console.WriteLine();
-
-        for (int i = 0; i < 5; i++)
-        {
-            Console.WriteLine(nome[i]);
-        }
-        
-        if (nome[0] == "Fernando")
-        {
-            Console.WriteLine("Igual");
-        }
-
-        //compare of sring
-        if(string.Equals(nome[0], "fernando", StringComparison.OrdinalIgnoreCase)){
-            Console.WriteLine("Comparado com sucesso, com ignore case");
-        }
-        //quebra de linha
-        Console.WriteLine();
-        foreach (string nomes in nome)
-        {
-
-            Console.WriteLine("Foreach");
-            Console.WriteLine(nomes);
-
-
-        }
     }
 
 }
