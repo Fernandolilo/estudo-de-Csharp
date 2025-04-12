@@ -1,0 +1,14 @@
+D:\.net\estudo\bin\Debug\net8.0\estudo.exe
+D:\.net\estudo\bin\Debug\net8.0\estudo.deps.json
+D:\.net\estudo\bin\Debug\net8.0\estudo.runtimeconfig.json
+D:\.net\estudo\bin\Debug\net8.0\estudo.dll
+D:\.net\estudo\bin\Debug\net8.0\estudo.pdb
+D:\.net\estudo\obj\Debug\net8.0\estudo.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net\estudo\obj\Debug\net8.0\estudo.AssemblyInfoInputs.cache
+D:\.net\estudo\obj\Debug\net8.0\estudo.AssemblyInfo.cs
+D:\.net\estudo\obj\Debug\net8.0\estudo.csproj.CoreCompileInputs.cache
+D:\.net\estudo\obj\Debug\net8.0\estudo.dll
+D:\.net\estudo\obj\Debug\net8.0\refint\estudo.dll
+D:\.net\estudo\obj\Debug\net8.0\estudo.pdb
+D:\.net\estudo\obj\Debug\net8.0\estudo.genruntimeconfig.cache
+D:\.net\estudo\obj\Debug\net8.0\ref\estudo.dll
