@@ -12,3 +12,4 @@ D:\.net\estudo\obj\Debug\net8.0\refint\estudo.dll
 D:\.net\estudo\obj\Debug\net8.0\estudo.pdb
 D:\.net\estudo\obj\Debug\net8.0\estudo.genruntimeconfig.cache
 D:\.net\estudo\obj\Debug\net8.0\ref\estudo.dll
+D:\.net\estudo\obj\Debug\net8.0\estudo.sourcelink.json
