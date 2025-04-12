@@ -22,13 +22,22 @@
 
 
         string[] nome = { "Fernando", "Tania", "Elias", "Heloisa", "Davi" };
-         //quebra de linha
+        //quebra de linha
         Console.WriteLine();
 
         for (int i = 0; i < 5; i++)
         {
-
             Console.WriteLine(nome[i]);
+        }
+        
+        if (nome[0] == "Fernando")
+        {
+            Console.WriteLine("Igual");
+        }
+
+        //compare of sring
+        if(string.Equals(nome[0], "fernando", StringComparison.OrdinalIgnoreCase)){
+            Console.WriteLine("Comparado com sucesso, com ignore case");
         }
         //quebra de linha
         Console.WriteLine();
@@ -37,6 +46,8 @@
 
             Console.WriteLine("Foreach");
             Console.WriteLine(nomes);
+
+
         }
     }
 
