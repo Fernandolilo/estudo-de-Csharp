@@ -5,3 +5,4 @@ Console.WriteLine("Hello, World!");
 Console.Write("Digite seu nome: ");
 string name = Console.ReadLine();
 Console.WriteLine(name);
+Console.WriteLine($"Olá {name}");
