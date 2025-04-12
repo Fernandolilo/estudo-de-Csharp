@@ -1,5 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Data.Common;
+﻿class Program{
+    static void Main(){
+       
 
 Console.WriteLine("Hello, World!");
 
@@ -13,6 +14,9 @@ int year = int.Parse(Console.ReadLine());
 int age = 2025 - year;
 Console.WriteLine($"idade: {age}");
 
-if(age >=18) Console.WriteLine("Você é maior de idadae: ");
+if(age >=18) Console.WriteLine("Você é maior de idade: ");
 else if(age == 38) Console.WriteLine($"Você tem {age}");
 else Console.WriteLine("voce é menor de idade");
+
+    }
+}
