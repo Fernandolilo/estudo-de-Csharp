@@ -7,6 +7,7 @@
 
         //um ex usando o console para escrita.
         Console.Write("Digite seu nome: ");
+
         string name = Console.ReadLine();
         Console.WriteLine(name);
         Console.WriteLine($"Olá {name}");
@@ -21,10 +22,21 @@
 
 
         string[] nome = { "Fernando", "Tania", "Elias", "Heloisa", "Davi" };
+         //quebra de linha
+        Console.WriteLine();
 
         for (int i = 0; i < 5; i++)
         {
+
             Console.WriteLine(nome[i]);
+        }
+        //quebra de linha
+        Console.WriteLine();
+        foreach (string nomes in nome)
+        {
+
+            Console.WriteLine("Foreach");
+            Console.WriteLine(nomes);
         }
     }
 
