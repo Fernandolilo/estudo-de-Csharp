@@ -14,10 +14,7 @@ class Program
 
 
 
-        Calculate calculate = new Calculate(Sum);
-        Calculate calculate1 = new Calculate(Multiply);
-        Run(calculate);
-        Run(calculate1);
+
         //podemos tambem criar um metodo anonimo veja o ex:
 
         var div = delegate (int x, int y){return x/y;};
@@ -25,7 +22,7 @@ class Program
 
     }
 
-    static void Run(Calculate calc)
+    static void Run(Func<int, int, int> calc)
     {
         Console.WriteLine(calc(20, 30));
     }
@@ -40,9 +37,6 @@ class Program
         return a * b;
     }
 }
-
-delegate int Calculate(int x, int y);
-
 
 class FileLogger : ILogger
 {
