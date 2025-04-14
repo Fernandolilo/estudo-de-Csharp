@@ -25,6 +25,11 @@ class Program
         Action<string> test = delegate(string names){Console.WriteLine($"Olá {names}");};
         test("Fernando Silva");
 
+        Func<decimal> test2 = delegate() {return 5.7m;};
+        Console.WriteLine(test2());
+
+        Func<string, bool> chackName =delegate(string nomes) {return nomes == "Fernando";};
+        Console.WriteLine(chackName("Tania"));
     }
 
     static void Run(Func<int, int, int> calc)
