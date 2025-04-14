@@ -14,11 +14,14 @@ class Program
 
 
         Calculate calculate = new Calculate(Sum);
-        int result = calculate(10,20);
-        Console.WriteLine(result);
+        Run(calculate);
 
     }
 
+    static void Run(Calculate calc)
+    {
+        Console.WriteLine(calc(20, 30));
+    }
     static int Sum(int a, int b)
     {
         return a + b;
