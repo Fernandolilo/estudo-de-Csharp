@@ -4,19 +4,42 @@ class Program
 {
     static void Main()
     {
-        BankAcount acount = new BankAcount("Fernando", 100);
+        ILogger logger = new FileLogger();
+        BankAcount acount = new BankAcount("Fernando", 100, logger);
         acount.Deposito(-50);
         Console.WriteLine("Acount balance: " + acount.Balance);
-        BankAcount acount1 = new BankAcount("Tania", 100);
+        BankAcount acount1 = new BankAcount("Tania", 100, logger);
         acount1.Deposito(100);
         Console.WriteLine("Acount1 balance: " + acount1.Balance);
 
     }
 }
 
+class FileLogger : ILogger
+{
+    public void Log(string message)
+    {
+        File.AppendAllText("log.txt", message);
+    }
+}
+
+class ConsoleLogger : ILogger
+{
+    public void Log(string message)
+    {
+        Console.WriteLine($"LOGGER: {message}");
+    }
+}
+
+interface ILogger
+{
+    void Log(string message);
+}
+
 class BankAcount
 {
     private string name;
+    private readonly ILogger logger;
     private decimal balance;
 
     public decimal Balance
@@ -33,7 +56,7 @@ class BankAcount
     
     
 
-    public BankAcount(string name, decimal balance)
+    public BankAcount(string name, decimal balance, ILogger logger)
     {
         if (string.IsNullOrWhiteSpace(name))
         {
@@ -44,6 +67,7 @@ class BankAcount
             throw new Exception("Saldo não pode ser negativo.");
         }
         this.name = name;
+        this.logger = logger;
         this.balance = balance;
     }
 
@@ -51,6 +75,7 @@ class BankAcount
     {
         if (amount <= 0)
         {
+            logger.Log($"Não é possível depositar {amount} na conta de {name}");
             return;
         }
         balance += amount;
