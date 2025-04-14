@@ -25,7 +25,22 @@ class Program
             Console.WriteLine("Saldo: " + act.Balance);
         }
 
+        DataStore<int> store = new DataStore<int>();
+
+        //neste caso por padão vai imprimir 0 por ser o default
+        Console.WriteLine(store.Value);
+        //agora vou setar um valor...
+
+        store.Value = 38;
+        Console.WriteLine(store.Value);
+
+
     }
+}
+
+class DataStore<T>
+{
+    public T Value {get; set;}
 }
 
 class FileLogger : ILogger
