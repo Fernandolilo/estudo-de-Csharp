@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        ILogger logger = new FileLogger();
+        ILogger logger = new FileLogger("myLog.txt");
         BankAcount acount = new BankAcount("Fernando", 100, logger);
         acount.Deposito(-50);
         Console.WriteLine("Acount balance: " + acount.Balance);
@@ -17,9 +17,15 @@ class Program
 
 class FileLogger : ILogger
 {
+    private readonly string filePath;
+
+    public FileLogger(string filePath)
+    {
+        this.filePath = filePath;
+    }
     public void Log(string message)
     {
-        File.AppendAllText("log.txt", $"{message}{Environment.NewLine}");
+        File.AppendAllText(filePath, $"{message}{Environment.NewLine}");
     }
 }
 
@@ -44,17 +50,17 @@ class BankAcount
 
     public decimal Balance
     {
-        get{return balance;}
+        get { return balance; }
 
     }
 
     public string Name
     {
-        get {return name;}
-        
+        get { return name; }
+
     }
-    
-    
+
+
 
     public BankAcount(string name, decimal balance, ILogger logger)
     {
