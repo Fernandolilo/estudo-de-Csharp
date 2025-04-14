@@ -12,6 +12,21 @@ class Program
         acount1.Deposito(100);
         Console.WriteLine("Acount1 balance: " + acount1.Balance);
 
+
+        //usar listas em c#
+
+        List<BankAcount> acounts = new List<BankAcount>{
+            acount,
+            acount1
+        };
+
+        // ou simplesmente uma lista generica para inteiros por ex:
+
+        List<int> numbers = new List<int>{1,2,3,4,5};
+        foreach(int number in numbers){
+            Console.WriteLine(number);
+        }
+
     }
 }
 
