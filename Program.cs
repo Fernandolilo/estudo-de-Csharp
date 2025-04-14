@@ -17,18 +17,20 @@ class Program
 
         //podemos tambem criar um metodo anonimo veja o ex:
 
-        var div = delegate (int x, int y){return x/y;};
+        //lambda 
+        var div =  (int x, int y) => x/y;
+
         Console.WriteLine(div(50,10));
 
-        //temos tambem o Action
-
-        Action<string> test = delegate(string names){Console.WriteLine($"Olá {names}");};
+        // lambda
+        var test =  (string names) => Console.WriteLine($"Olá {names}");
         test("Fernando Silva");
 
-        Func<decimal> test2 = delegate() {return 5.7m;};
+        //lambda
+        Func<decimal> test2 = ()=>  5.7m;
         Console.WriteLine(test2());
 
-        Func<string, bool> chackName =delegate(string nomes) {return nomes == "Fernando";};
+        Func<string, bool> chackName= nomes =>  nomes == "Fernando";
         Console.WriteLine(chackName("Tania"));
     }
 
