@@ -13,35 +13,20 @@ class Program
         Console.WriteLine("Acount1 balance: " + acount1.Balance);
 
 
-        //usar listas em c#
+        Calculate calculate = new Calculate(Sum);
+        int result = calculate(10,20);
+        Console.WriteLine(result);
 
-        List<BankAcount> acounts = new List<BankAcount>{
-            acount,
-            acount1
-        };
+    }
 
-        foreach(BankAcount act in acounts){
-            Console.WriteLine("Nome: " + act.Name);
-            Console.WriteLine("Saldo: " + act.Balance);
-        }
-
-        DataStore<int> store = new DataStore<int>();
-
-        //neste caso por padão vai imprimir 0 por ser o default
-        Console.WriteLine(store.Value);
-        //agora vou setar um valor...
-
-        store.Value = 38;
-        Console.WriteLine(store.Value);
-
-
+    static int Sum(int a, int b)
+    {
+        return a + b;
     }
 }
 
-class DataStore<T>
-{
-    public T Value {get; set;}
-}
+delegate int Calculate(int x, int y);
+
 
 class FileLogger : ILogger
 {
