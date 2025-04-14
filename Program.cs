@@ -20,11 +20,9 @@ class Program
             acount1
         };
 
-        // ou simplesmente uma lista generica para inteiros por ex:
-
-        List<int> numbers = new List<int>{1,2,3,4,5};
-        foreach(int number in numbers){
-            Console.WriteLine(number);
+        foreach(BankAcount act in acounts){
+            Console.WriteLine("Nome: " + act.Name);
+            Console.WriteLine("Saldo: " + act.Balance);
         }
 
     }
