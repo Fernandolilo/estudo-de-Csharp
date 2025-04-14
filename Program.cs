@@ -13,8 +13,15 @@ class Program
         Console.WriteLine("Acount1 balance: " + acount1.Balance);
 
 
+
         Calculate calculate = new Calculate(Sum);
+        Calculate calculate1 = new Calculate(Multiply);
         Run(calculate);
+        Run(calculate1);
+        //podemos tambem criar um metodo anonimo veja o ex:
+
+        var div = delegate (int x, int y){return x/y;};
+        Console.WriteLine(div(50,10));
 
     }
 
@@ -22,9 +29,15 @@ class Program
     {
         Console.WriteLine(calc(20, 30));
     }
+
     static int Sum(int a, int b)
     {
         return a + b;
+    }
+
+    static int Multiply(int a, int b)
+    {
+        return a * b;
     }
 }
 
