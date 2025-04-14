@@ -20,6 +20,11 @@ class Program
         var div = delegate (int x, int y){return x/y;};
         Console.WriteLine(div(50,10));
 
+        //temos tambem o Action
+
+        Action<string> test = delegate(string names){Console.WriteLine($"Olá {names}");};
+        test("Fernando Silva");
+
     }
 
     static void Run(Func<int, int, int> calc)
