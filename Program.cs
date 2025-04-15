@@ -1,16 +1,18 @@
 ﻿using System.ComponentModel;
 
-class Program
+static class Program
 {
     static void Main()
     {
-        //extendendo metodos
-        WriteLine("Test", ConsoleColor.Yellow);
+        //extendendo metodos 
+
+        // modificado para um metodo de extends de string 
+        "Test".WriteLine(ConsoleColor.Yellow);
 
     }
 
     //posso criar metodos static e reaproveitar da forma que for necessario, em diversas parte do codigo
-    static void WriteLine(string text, ConsoleColor color)
+    static void WriteLine(this string text, ConsoleColor color)
     {
         Console.ForegroundColor = color;
         Console.WriteLine(text);
