@@ -4,49 +4,17 @@ class Program
 {
     static void Main()
     {
-        ILogger logger = new FileLogger("myLog.txt");
-        BankAcount acount = new BankAcount("Fernando", 100, logger);
-        acount.Deposito(-50);
-        Console.WriteLine("Acount balance: " + acount.Balance);
-        BankAcount acount1 = new BankAcount("Tania", 100, logger);
-        acount1.Deposito(100);
-        Console.WriteLine("Acount1 balance: " + acount1.Balance);
+        //extendendo metodos
+        WriteLine("Test", ConsoleColor.Yellow);
 
-
-
-
-        //podemos tambem criar um metodo anonimo veja o ex:
-
-        //lambda 
-        var div =  (int x, int y) => x/y;
-
-        Console.WriteLine(div(50,10));
-
-        // lambda
-        var test =  (string names) => Console.WriteLine($"Olá {names}");
-        test("Fernando Silva");
-
-        //lambda
-        Func<decimal> test2 = ()=>  5.7m;
-        Console.WriteLine(test2());
-
-        Func<string, bool> chackName= nomes =>  nomes == "Fernando";
-        Console.WriteLine(chackName("Tania"));
     }
 
-    static void Run(Func<int, int, int> calc)
+    //posso criar metodos static e reaproveitar da forma que for necessario, em diversas parte do codigo
+    static void WriteLine(string text, ConsoleColor color)
     {
-        Console.WriteLine(calc(20, 30));
-    }
-
-    static int Sum(int a, int b)
-    {
-        return a + b;
-    }
-
-    static int Multiply(int a, int b)
-    {
-        return a * b;
+        Console.ForegroundColor = color;
+        Console.WriteLine(text);
+        Console.ResetColor();
     }
 }
 
